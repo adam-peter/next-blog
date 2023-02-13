@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-const BlogPost = () => {
+type BlogPostProps = {
+  params: { postId: number };
+};
+
+const BlogPost = async ({ params }: BlogPostProps) => {
+  const { postId } = params;
   return (
     <div>
-      blogpost
+      Blog post <span className="text-blue-500 font-bold">{postId}</span>
     </div>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;

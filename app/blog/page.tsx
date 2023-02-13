@@ -1,11 +1,29 @@
-import React from 'react'
+import React from "react";
 
-const Blog = () => {
-  return (
-    <div>
-      blog
-    </div>
-  )
+import Link from 'next/link'
+
+import { getAllPosts } from "@/lib/cms";
+
+export function getStaticParams() {
+  return;
 }
 
-export default Blog
+const Blog = async () => {
+  const posts = await getAllPosts();
+
+  return (
+    <div>
+      {posts.map((post) => {
+        return (
+          <Link href={`/blog/${post.postId}`} key={post.postId}>
+            <div>
+              <h1>{post.title}</h1>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Blog;

@@ -19,12 +19,12 @@ export default function Home() {
           </h1>
         </div>
         <div>
-          <Link href="/blog" className="text-xl hover:text-purple-500">
+          <Link href="/blog" className="text-xl hover:text-blue-500">
             checkout my Blog
           </Link>
         </div>
         <div>
-          <Link href="/contact" className="text-xl hover:text-purple-500">contact me</Link>
+          <Link href="/contact" className="text-xl hover:text-blue-500">contact me</Link>
         </div>
       </div>
     </div>
